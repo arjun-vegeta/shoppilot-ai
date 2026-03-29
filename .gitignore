@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+
+# Build Outputs
+.next/
+out/
+build/
+dist/
+*.tsbuildinfo
+
+# IDEs
+.vscode/
+.idea/
+.DS_Store
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Other
+amazon_products.csv
+.gemini/
