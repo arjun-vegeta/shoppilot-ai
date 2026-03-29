@@ -1,0 +1,20 @@
+{
+  "name": "shoppilot-monorepo",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "lint:api": "cd apps/api && .venv/bin/ruff check app tests",
+    "format:api": "cd apps/api && .venv/bin/ruff format app tests",
+    "test:api": "cd apps/api && PYTHONPATH=. .venv/bin/pytest",
+    "lint:web": "npm run lint --workspace=apps/web",
+    "format:web": "npm run format --workspace=apps/web",
+    "test:web": "npm run test --workspace=apps/web",
+    "lint": "npm run lint:api && npm run lint:web",
+    "format": "npm run format:api && npm run format:web",
+    "test": "npm run test:api && npm run test:web"
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+}
