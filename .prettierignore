@@ -1,0 +1,12 @@
+node_modules/
+.next/
+out/
+build/
+dist/
+*.tsbuildinfo
+package-lock.json
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+amazon_products.csv
