@@ -1,0 +1,12 @@
+fastapi
+uvicorn[standard]
+gunicorn
+pydantic-settings
+google-genai
+supabase
+python-multipart
+ruff
+pytest
+httpx
+pytest-asyncio
+firecrawl-py
