@@ -1,6 +1,7 @@
 'use client';
 
 import * as React from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   X,
@@ -104,13 +105,15 @@ export function ProductDetailsModal({ isOpen, onClose, product }: ProductDetails
             {/* Left: Product Media */}
             <div className="md:w-1/2 bg-muted/20 flex items-center justify-center p-12 border-r border-border/20">
               <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
-                <img
+                <Image
                   src={
                     product.image_url ||
                     'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf'
                   }
                   alt={product.title}
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
+                  unoptimized
                 />
                 <div className="absolute top-6 left-6">
                   <div className="px-4 py-2 rounded-full bg-background/60 backdrop-blur-md border border-white/5 flex items-center gap-2">

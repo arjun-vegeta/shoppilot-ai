@@ -1,7 +1,9 @@
 'use client';
 
 import * as React from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
+import {
+  motion, AnimatePresence } from 'framer-motion';
 import {
   Brain,
   BarChart3,
@@ -54,13 +56,15 @@ export function ProductWidget({
       >
         {/* Image Container */}
         <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-muted/30 border border-border/5 shadow-sm transition-all duration-500 group-hover:shadow-xl group-hover:shadow-primary/5 group-hover:border-primary/10">
-          <img
+          <Image
             src={
               image_url ||
               'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?q=80&w=800&auto=format&fit=crop'
             }
             alt={title}
-            className="h-full w-full object-cover transition-transform duration-1000 ease-[0.23,1,0.32,1] group-hover:scale-110"
+            fill
+            className="object-cover transition-transform duration-1000 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] group-hover:scale-110"
+            unoptimized
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 

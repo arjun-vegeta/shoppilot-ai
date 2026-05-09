@@ -24,7 +24,7 @@ import { Input } from '@/components/ui/input';
 import { api } from '@/lib/api/client';
 import { cn } from '@/lib/utils';
 
-export default function Home() {
+function HomeContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -296,5 +296,13 @@ export default function Home() {
         </footer>
       )}
     </div>
+  );
+}
+
+export default function Home() {
+  return (
+    <React.Suspense fallback={<div className="h-screen bg-background flex items-center justify-center"><Loader2 className="h-8 w-8 animate-spin text-primary/20" /></div>}>
+      <HomeContent />
+    </React.Suspense>
   );
 }
