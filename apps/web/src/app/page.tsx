@@ -301,7 +301,13 @@ function HomeContent() {
 
 export default function Home() {
   return (
-    <React.Suspense fallback={<div className="h-screen bg-background flex items-center justify-center"><Loader2 className="h-8 w-8 animate-spin text-primary/20" /></div>}>
+    <React.Suspense
+      fallback={
+        <div className="h-screen bg-background flex items-center justify-center">
+          <Loader2 className="h-8 w-8 animate-spin text-primary/20" />
+        </div>
+      }
+    >
       <HomeContent />
     </React.Suspense>
   );
