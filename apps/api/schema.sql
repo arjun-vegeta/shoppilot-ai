@@ -106,8 +106,8 @@ begin
     coalesce(vs.similarity, 0)::float as similarity,
     coalesce(fts.rank, 0)::float as fts_rank,
     (
-      coalesce(fts.rank, 0) * full_text_weight +
-      coalesce(vs.similarity, 0) * vector_weight
+      (coalesce(fts.rank, 0) / (coalesce(fts.rank, 0) + 1)) * full_text_weight +
+      (case when vs.similarity is null or vs.similarity = 'NaN'::float then 0 else vs.similarity end) * vector_weight
     )::float as hybrid_score
   from products p
   left join fts on p.id = fts.id
