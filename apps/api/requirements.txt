@@ -9,4 +9,4 @@ ruff
 pytest
 httpx
 pytest-asyncio
-firecrawl-py
+ddgs
