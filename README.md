@@ -9,7 +9,7 @@ ShopPilot AI is a production-grade AI-powered shopping assistant that combines a
 
 ## Key Features
 
-- **Hybrid Intelligence:** Combines an indexed catalog (Supabase + pgvector) with live web extraction (Firecrawl).
+- **Hybrid Intelligence:** Combines an indexed catalog (Supabase + pgvector) with live, free web extraction (DuckDuckGo Search + Jina Reader).
 - **Agentic Reasoning:** Powered by `gemini-3.1-flash-lite`, the agent autonomously decides when to search the catalog vs. scraping live web data.
 - **Neural Search:** Implements Hybrid Scoring (Full-Text + Vector Similarity) for ultra-relevant product discovery.
 - **Live Enrichment:** On-demand fetching of real-time prices, stock status, and sentiment-aware review summaries.
@@ -23,8 +23,10 @@ graph TD
     Web --> API[FastAPI Backend]
     API --> Gemini[Gemini 3.1 Flash Lite]
     API --> Supabase[(Supabase pgvector)]
-    API --> Firecrawl[Firecrawl Scraper]
-    Firecrawl --> Ecom[Live E-commerce Sites]
+    API --> DDGS[DuckDuckGo Search]
+    API --> Jina[Jina Reader API]
+    DDGS --> Ecom[Live E-commerce Sites]
+    Jina --> Ecom
 ```
 
 ## Tech Stack
